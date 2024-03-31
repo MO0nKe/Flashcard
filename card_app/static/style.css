@@ -1,0 +1,131 @@
+.profile-thumbnail {
+    position: absolute;
+}
+
+.profile-header {
+    min-height: 260px;
+    margin-left: 280px;
+}
+
+@media only screen and (min-width: 481px) {
+    .flex-row.row {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    .flex-row.row > [class*='col-'] {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+    }
+
+    .flex-row.row:after,
+    .flex-row.row:before {
+        display: flex;
+    }
+}
+
+.flex-row .thumbnail, .flex-row .caption {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    flex: 1 0 auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.thumbnail .caption {
+    padding: 9px;
+}
+
+.thumbnail header {
+    margin-bottom: 15px;
+}
+
+.thumbnail .newCollection {
+    font-size: 3em;
+    margin: 25%;
+    border: none;
+    background-color: rgb(48, 20, 202);
+    text-align: center;
+}
+
+.thumbnail {
+    padding: 15px;
+    box-shadow: 0 2px 2px #aaa;
+}
+
+.thumbnail header h2 {
+    margin-bottom: 5px;
+}
+
+.flex-row .caption p.flex-text {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+.thumbnail .category {
+    font-size: 0.875em;
+}
+
+.thumbnail .delete {
+    text-align: right;
+}
+
+.margTop {
+    margin-top: 10px;
+}
+
+div.flask-pagedown-preview {
+    margin: 10px 0px 10px 0px;
+    border: 1px solid #e0e0e0;
+    padding: 4px;
+}
+
+div.flask-pagedown-preview h1 {
+    font-size: 140%;
+}
+
+div.flask-pagedown-preview h2 {
+    font-size: 130%;
+}
+
+div.flask-pagedown-preview h3 {
+    font-size: 120%;
+}
+
+.flashcard-body h1 {
+    font-size: 140%;
+}
+
+.flashcard-body h2 {
+    font-size: 130%;
+}
+
+.flashcard-body h3 {
+    font-size: 120%;
+}
+
+.flashcard-body {
+    border: 1px solid #e0e0e0;
+    padding: 4px;
+}
+
+.learn {
+    display: none;
+}
+
+.btn-answer, .choiseBtn, .btn-learn{
+    margin-bottom: 15px;
+    margin-top: 15px;
+}

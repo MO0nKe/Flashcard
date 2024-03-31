@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Flashcard - Add new Flashcard Deck{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" type="text/css">
+{% endblock %}
+
+{% block content %}
+    <div class="page-header">
+        <h1>Add a new Flashcard Collection</h1>
+    </div>
+    <div class="col-md-4">
+        <form method="post">
+            {{ form.csrf_token }}
+            <div class="form-group">
+                {{ form.name.label }}
+                {{ form.name(size=60, class="form-control", placeholder="Name") }}
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+{% endblock %}

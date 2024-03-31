@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Flashcard - {{ deck.name }}/Flashcard {{ flashcard.id }}{% endblock %}
+
+{% block content %}
+    <div class="page-header">
+        <h1> {{ deck.name }} / Flashcard {{ flashcard.id }} </h1>
+
+        <a class='btn btn-primary' href="{{ url_for('.edit_flashcard', deckId=deck.id, cardId=flashcard.id) }}">Edit</a>
+    </div>
+    <div>
+        <h2>Question</h2>
+        <div class="flashcard-body">
+            {% if flashcard.question_html %}
+                <p>{{ flashcard.question_html|safe }}</p>
+            {% else %}
+                <p>{{ flashcard.question }}</p>
+            {% endif %}
+        </div>
+        <h2>Answer</h2>
+        <div class="flashcard-body">
+            {% if flashcard.answer_html %}
+                <p>{{ flashcard.answer_html|safe }}</p>
+            {% else %}
+                <p>{{ flashcard.answer }}</p>
+            {% endif %}
+        </div>
+    </div>
+    <a class="btn btn-primary" href = "{{url_for('user', username = username)}}">Go To Deck</a>
+{% endblock %}

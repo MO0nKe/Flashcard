@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Flashcards - {{ deck.name }}{% endblock %}
+
+{% block content %}
+    <div class="page-header">
+        <h1> {{ deck.name }} </h1>
+        <br>
+        <div class="margTop">
+            <p class="label label-default">{{ deck.flashcards.filter_by(wrong_answered=False, right_answered=False).count() }} Flashcards in
+                this Deck.</p>
+            <p class="label label-danger">{{ deck.flashcards.filter_by(wrong_answered=True).count() }} wrong
+                answered</p>
+            <p class="label label-success">{{ deck.flashcards.filter_by(right_answered=True).count() }} right
+                answered</p>
+        </div>
+    </div>
+    <a href="{{ url_for('.learn', id=deck.id, mode='normal') }}"><span
+            class="btn btn-primary btn-learn">Learn All</span></a>
+    <a href="{{ url_for('.learn', id=deck.id, mode='wrong_ones') }}"><span
+            class="btn btn-danger btn-learn">Learn Wrong Ones</span></a>
+    <a href="{{ url_for('.reset_cards', id=deck.id) }}"><span
+            class="btn btn-warning btn-learn">Reset Cards</span></a>
+    {% include "_flashcard.html" %}
+
+    <a class="btn btn-primary" href = "{{url_for('user', username = username)}}">Go To Deck</a>
+
+{% endblock %}

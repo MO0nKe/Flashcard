@@ -1,0 +1,20 @@
+<div class="flex-row row">
+    {% for flashcard in deck.flashcards %}
+        <div class="col-xs-12 col-sm-4 col-lg-3">
+            <article class="thumbnail">
+                <header>
+                    <h3>
+                        <a href="{{ url_for('.flashcard', deckId=deck.id, cardId=flashcard.id) }}">Flashcard {{ loop.index }}</a>
+                    </h3>
+                    <a href="{{ url_for('.delete_card', deckId=deck.id, cardId=flashcard.id) }}"><span class="label label-danger">Delete</span></a>
+                </header>
+                <p class="flex-text">{{ flashcard.question[:20] }}...</p>
+            </article>
+        </div>
+    {% endfor %}
+    <div class="col-xs-12 col-sm-4 col-lg-3">
+        <article class="thumbnail">
+            <a class="btn btn-primary" href="{{ url_for('add_flashcard', id=deck.id) }}">Add Cards+</a>
+        </article>
+    </div>
+</div>
